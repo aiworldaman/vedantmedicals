@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" data-theme-mode="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vedant Medicals — Logo Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --green:#17a673; --green-ink:#0c6b4a; --green-deep:#0d4f39;
+    --teal:#0e9aa0; --forest:#1f5d44; --berry:#b5446e;
+    --bg:#f5f2ec; --surface:#ffffff; --ink:#1c2521; --ink-2:#5d6b64; --ink-3:#8c988f;
+    --line:#e7e2d8; --line-2:#efebe2;
+    --font-h:"Bricolage Grotesque","Manrope",sans-serif;
+    --font:"Manrope",system-ui,sans-serif;
+    --shadow:0 1px 2px rgba(20,40,32,.05),0 12px 30px -16px rgba(20,40,32,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--font);background:var(--bg);color:var(--ink);
+    -webkit-font-smoothing:antialiased;line-height:1.5;
+    background-image:radial-gradient(circle at 1px 1px, rgba(20,60,44,.05) 1px, transparent 0);
+    background-size:26px 26px;}
+  .wrap{max-width:1180px;margin:0 auto;padding:54px 28px 90px}
+
+  /* header */
+  .head{margin-bottom:40px;max-width:680px}
+  .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--green-ink);
+    background:color-mix(in oklab,var(--green) 12%,#fff);border:1px solid color-mix(in oklab,var(--green) 22%,#fff);
+    padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  .kicker .d{width:7px;height:7px;border-radius:50%;background:var(--green)}
+  h1{font-family:var(--font-h);font-weight:700;font-size:clamp(30px,5vw,46px);
+    letter-spacing:-.02em;line-height:1.05;margin-bottom:14px}
+  h1 em{font-style:normal;color:var(--green-ink)}
+  .lead{font-size:16.5px;color:var(--ink-2);max-width:600px}
+  .lead b{color:var(--ink);font-weight:700}
+
+  /* current logo callout */
+  .current{display:flex;align-items:center;gap:18px;margin-top:26px;padding:16px 20px;
+    background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);width:fit-content}
+  .current .now-tag{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .current .lock{display:flex;align-items:center;gap:11px}
+
+  /* grid */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:30px}
+  @media (max-width:760px){.grid{grid-template-columns:1fr}}
+
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:20px;
+    box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .2s ease, box-shadow .2s ease}
+  .card:hover{transform:translateY(-3px);box-shadow:0 1px 2px rgba(20,40,32,.06),0 22px 44px -20px rgba(20,40,32,.28)}
+
+  .stage{position:relative;padding:40px 28px 34px;display:flex;align-items:center;justify-content:center;gap:16px;
+    background:
+      radial-gradient(120% 100% at 50% 0%, color-mix(in oklab,var(--green) 5%,#fff), transparent 70%),
+      var(--surface);
+    border-bottom:1px solid var(--line-2);min-height:148px}
+  .opt-no{position:absolute;top:14px;left:18px;font-family:var(--font-h);font-weight:600;
+    font-size:13px;color:var(--ink-3)}
+  .copy-hint{position:absolute;top:13px;right:16px;font-size:11px;color:var(--ink-3);opacity:0;transition:opacity .2s}
+  .card:hover .copy-hint{opacity:1}
+
+  /* lockup */
+  .lock{display:flex;align-items:center;gap:12px}
+  .lock.lg{gap:13px}
+  .wm{display:flex;flex-direction:column;line-height:1;font-family:var(--font-h)}
+  .wm b{font-size:23px;font-weight:700;letter-spacing:-.025em;color:var(--ink)}
+  .wm span{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--green-ink);margin-top:3px}
+  .wm.teal span{color:var(--teal)} .wm.forest span{color:var(--forest)}
+
+  .meta{padding:18px 22px 20px;display:flex;flex-direction:column;gap:12px}
+  .meta-top{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+  .meta h3{font-family:var(--font-h);font-weight:600;font-size:17px;letter-spacing:-.01em;flex:1 1 auto}
+  .pal{flex:none;white-space:nowrap;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3)}
+  .meta p{font-size:13.5px;color:var(--ink-2)}
+
+  /* test strip */
+  .tests{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px dashed var(--line)}
+  .chip{display:flex;align-items:center;justify-content:center;border-radius:12px;flex:none}
+  .chip.light{background:#fff;border:1px solid var(--line);width:46px;height:46px}
+  .chip.dark{background:#14201b;width:46px;height:46px}
+  .chip.fav{background:#fff;border:1px solid var(--line);width:30px;height:30px}
+  .tests .tlabel{font-size:11px;color:var(--ink-3);margin-left:auto;font-weight:600}
+
+  .foot{margin-top:46px;padding:22px 24px;background:var(--surface);border:1px solid var(--line);
+    border-radius:16px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow);max-width:760px}
+  .foot svg{flex:none;color:var(--green-ink);margin-top:1px}
+  .foot p{font-size:14px;color:var(--ink-2)}
+  .foot b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="head">
+    <span class="kicker"><span class="d"></span>Vedant Medicals · Brand</span>
+    <h1>Eight directions for the <em>logo</em>.</h1>
+    <p class="lead">Each option below is shown as a full lockup, with small-size tests on light, dark, and as a favicon. Tell me a number (e.g. <b>“go with Option 5”</b>) and I’ll wire it straight into the app — header, footer, and all.</p>
+
+    <div class="current">
+      <span class="now-tag">In&nbsp;use</span>
+      <span class="lock" id="current-lock"></span>
+    </div>
+  </header>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="foot">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16v-4M12 8h.01"/><circle cx="12" cy="12" r="9"/></svg>
+    <p><b>Mix &amp; match welcome.</b> You can pick a mark from one option and a colour from another (e.g. the mortar &amp; pestle in deep forest green). Alternate palettes are labelled — choosing one of those will retint the whole app, not just the logo, so flag it if you only want the logo recoloured.</p>
+  </div>
+</div>
+
+<script>
+  // ---- shared mark builder: returns full <svg> at any size ----
+  function mark(content, size, vb){
+    return '<svg viewBox="0 0 '+(vb||40)+' '+(vb||40)+'" width="'+size+'" height="'+size+'" aria-hidden="true">'+content+'</svg>';
+  }
+
+  // background container shapes
+  function squareBg(c){ return '<rect x="2" y="2" width="36" height="36" rx="11" fill="'+c+'"/>'; }
+  function circleBg(c){ return '<circle cx="20" cy="20" r="18" fill="'+c+'"/>'; }
+  function hexBg(c){ return '<path d="M20 2.5 33.6 10.25 V25.75 L20 33.5 6.4 25.75 V10.25 Z" fill="'+c+'"/>'; }
+  function squircleBg(c){ return '<path d="M20 2.5C32 2.5 37.5 8 37.5 20S32 37.5 20 37.5 2.5 32 2.5 20 8 2.5 20 2.5Z" fill="'+c+'"/>'; }
+
+  var GREEN='#17a673', TEAL='#0e9aa0', FOREST='#1f5d44', DEEP='#0d4f39';
+
+  // ---- the eight marks (full inner SVG content, 40x40 space) ----
+  var OPTIONS = [
+    {
+      id:1, name:'Caring Cross', pal:'Core green', shape:'Rounded badge',
+      desc:'Refined version of today’s mark — medical cross with a leaf, softened.',
+      wmClass:'',
+      svg: squareBg(GREEN)+
+        '<path d="M20 10.5v19M10.5 20h19" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>'+
+        '<path d="M27 11.4c2.3 1.7 2.5 4.8.3 6.9-1.5 1.5-3.6 1.8-5.4 1.5-.1-2 .2-4.2 1.7-5.6 1-1 2.2-2 3.4-2.8z" fill="#fff" opacity=".88"/>'
+    },
+    {
+      id:2, name:'Mortar & Pestle', pal:'Core green', shape:'Rounded badge',
+      desc:'The classic apothecary symbol — instantly reads “pharmacy”.',
+      wmClass:'',
+      svg: squareBg(GREEN)+
+        '<path d="M11.5 21A8.5 8.5 0 0 0 28.5 21" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>'+
+        '<path d="M9.5 20.4h21" stroke="#fff" stroke-width="3.2" stroke-linecap="round"/>'+
+        '<path d="M25.6 9.2 18.6 18.4" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/>'+
+        '<circle cx="26.4" cy="8.4" r="2" fill="#fff"/>'
+    },
+    {
+      id:3, name:'Pulse Heart', pal:'Core green', shape:'Free mark',
+      desc:'Care + vitality. A heart with a heartbeat line — warm and human.',
+      wmClass:'',
+      svg: '<path d="M20 30.5C8.6 22.7 6.3 16.4 10.4 12.8c2.6-2.3 6.3-1.6 8.6 1.1l1 1.1 1-1.1c2.3-2.7 6-3.4 8.6-1.1 4.1 3.6 1.8 9.9-9.6 17.7z" fill="'+GREEN+'"/>'+
+        '<path d="M11 20.4h4.4l2-3.8 3 7 2.2-3.4h6.6" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>'
+    },
+    {
+      id:4, name:'Capsule', pal:'Alt · teal', shape:'Rounded badge',
+      desc:'A single tilted pill — minimal, modern, scales beautifully.',
+      wmClass:'teal',
+      svg: squareBg(TEAL)+
+        '<g transform="rotate(-38 20 20)">'+
+        '<rect x="10.5" y="16.25" width="19" height="7.5" rx="3.75" fill="#fff"/>'+
+        '<path d="M20 16.25h5.75a3.75 3.75 0 0 1 0 7.5H20z" fill="#fff" opacity=".5"/>'+
+        '<path d="M20 16.25v7.5" stroke="'+TEAL+'" stroke-width="1.5"/>'+
+        '</g>'
+    },
+    {
+      id:5, name:'Shield Cross', pal:'Core green', shape:'Free mark',
+      desc:'Trust, safety, protection — a reassuring choice for a pharmacy.',
+      wmClass:'',
+      svg: '<path d="M20 7.5l10 3.5v6.2c0 7.2-5.4 10.8-10 12.8-4.6-2-10-5.6-10-12.8V11z" fill="'+GREEN+'"/>'+
+        '<path d="M20 14v8.4M15.8 18.2h8.4" stroke="#fff" stroke-width="2.9" stroke-linecap="round"/>'
+    },
+    {
+      id:6, name:'Leaf Drop', pal:'Core green', shape:'Circle badge',
+      desc:'Natural wellness — a leaf inside a friendly circle.',
+      wmClass:'',
+      svg: circleBg(GREEN)+
+        '<path d="M27 12c1 7-3.5 13-11 13.5 0 0-1.6-7.5 3-12 2.6-2.6 6-1.5 8-1.5z" fill="#fff"/>'+
+        '<path d="M24 14.5c-3.5 1.8-6 4.8-7.4 8.6" stroke="'+GREEN+'" stroke-width="1.5" stroke-linecap="round"/>'
+    },
+    {
+      id:7, name:'V Monogram', pal:'Alt · forest', shape:'Circle badge',
+      desc:'Initial-led. A confident “V” that doubles as a checkmark.',
+      wmClass:'forest',
+      svg: circleBg(FOREST)+
+        '<path d="M12.5 12.5 20 28l7.5-15.5" fill="none" stroke="#fff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>'+
+        '<path d="M27.5 12.5c1.7-1.2 3.6-1.2 5 .1-1 1.9-2.8 2.6-5 2.4z" fill="#fff" opacity=".85"/>'
+    },
+    {
+      id:8, name:'Hex Tablet', pal:'Core green', shape:'Hexagon badge',
+      desc:'A tablet seen edge-on — geometric, distinctive, techy.',
+      wmClass:'',
+      svg: hexBg(GREEN)+
+        '<path d="M20 11v18" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>'+
+        '<path d="M20 12.5v15M12.5 20h15" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/>'
+    }
+  ];
+
+  function wordmark(cls){
+    return '<span class="wm '+(cls||'')+'"><b>Vedant</b><span>Medicals</span></span>';
+  }
+
+  // current logo (from the app) for the callout
+  document.getElementById('current-lock').innerHTML =
+    mark('<path d="M20 35C15.6 29.2 3.5 24 3.5 14.2 3.5 8.9 7.6 5.6 11.8 6.1 15.4 6.5 18.4 9.6 20 13.2c1.6-3.6 4.6-6.7 8.2-7.1 4.2-.5 8.3 2.8 8.3 8.1C36.5 24 24.4 29.2 20 35z" fill="'+GREEN+'"/>'+
+      '<path d="M7.5 19.4h5l2.6-5.2 3.8 10 2.8-5.2h8.3" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>', 36)
+    + wordmark('');
+
+  // build cards
+  document.getElementById('grid').innerHTML = OPTIONS.map(function(o){
+    return ''+
+    '<div class="card">'+
+      '<div class="stage">'+
+        '<span class="opt-no">Option '+String(o.id).padStart(2,'0')+'</span>'+
+        '<span class="lock lg">'+ mark(o.svg, 60) + wordmark(o.wmClass) +'</span>'+
+      '</div>'+
+      '<div class="meta">'+
+        '<div class="meta-top"><h3>'+o.name+'</h3><span class="pal">'+o.pal+'</span></div>'+
+        '<p>'+o.desc+'</p>'+
+        '<div class="tests">'+
+          '<span class="chip light">'+ mark(o.svg, 32) +'</span>'+
+          '<span class="chip dark">'+ mark(o.svg, 32) +'</span>'+
+          '<span class="chip fav">'+ mark(o.svg, 20) +'</span>'+
+          '<span class="tlabel">'+o.shape+'</span>'+
+        '</div>'+
+      '</div>'+
+    '</div>';
+  }).join('');
+</script>
+</body>
+</html>
