@@ -41,6 +41,7 @@ const ICONS = {
   chart: 'M5 20v-6M10 20V8M15 20v-9M20 20v-4M3 20h18',
   plusCircle: 'M12 21a9 9 0 100-18 9 9 0 000 18zM12 8.5v7M8.5 12h7',
   swap: 'M7 4L3 8l4 4M3 8h13M17 20l4-4-4-4M21 16H8',
+  grid: 'M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z',
 };
 
 function Icon({ name, size = 22, stroke = 2, fill = false, style }) {
@@ -204,24 +205,33 @@ function CategoryBar({ onBrowse }) {
       {dept && (
         <div className="catpanel" onMouseLeave={() => { if (isDesktop()) close(); }}>
           <div className="catpanel-inner">
-            {dept.cols.map((col, i) => (
-              <div className="catcol" key={i}>
-                <h4>{col.title}</h4>
-                {col.links.map((l, j) => (
-                  <button key={j} className="catlink" onClick={() => go(l)}>
-                    <span className="catlink-dot"></span>{l.label}
-                  </button>
-                ))}
+            {dept.cols.map((col, i) => {
+              const sections = col.sections || [{ title: col.title, links: col.links }];
+              return (
+                <div className={"catcol" + (col.tint ? " tint" : "")} key={i}>
+                  {sections.map((s, si) => (
+                    <div className="catsec" key={si}>
+                      {(s.cat || s.q)
+                        ? <button className="catsec-head" onClick={() => go(s)}>{s.title}</button>
+                        : <h4>{s.title}</h4>}
+                      {(s.links || []).map((l, j) => (
+                        <button key={j} className="catlink" onClick={() => go(l)}>{l.label}</button>
+                      ))}
+                    </div>
+                  ))}
+                </div>
+              );
+            })}
+            {dept.cols.length < 3 && (
+              <div className="catcol cat-promo">
+                <div className="catpromo-card">
+                  <span className="catpromo-ic"><Icon name={dept.icon} size={24} stroke={1.8} /></span>
+                  <b>{dept.name}</b>
+                  <span>Genuine products · doorstep delivery.</span>
+                  <button className="link-btn" onClick={() => { onBrowse({}); close(); }}>Browse everything <Icon name="chevron" size={14} /></button>
+                </div>
               </div>
-            ))}
-            <div className="catcol cat-promo">
-              <div className="catpromo-card">
-                <span className="catpromo-ic"><Icon name={dept.icon} size={24} stroke={1.8} /></span>
-                <b>{dept.name}</b>
-                <span>Genuine products · doorstep delivery.</span>
-                <button className="link-btn" onClick={() => { onBrowse({}); close(); }}>Browse everything <Icon name="chevron" size={14} /></button>
-              </div>
-            </div>
+            )}
           </div>
         </div>
       )}

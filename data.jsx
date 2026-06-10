@@ -175,67 +175,173 @@ function stockInfo(n){
 // each link points to a category id (`cat`) or a search term (`q`).
 const DEPARTMENTS = [
   { id: "medicines", name: "Medicines", icon: "pill", cols: [
-    { title: "By condition", links: [
-      { label: "Pain Relief", cat: "pain" },
-      { label: "Cold & Cough", cat: "cold" },
-      { label: "Stomach Care", cat: "digest" },
-      { label: "Diabetes Care", cat: "diabetes" },
-      { label: "Heart Care", cat: "heart" },
+    { sections: [
+      { title: "Health Concerns", links: [
+        { label: "Pain & Fever", cat: "pain" },
+        { label: "Cold & Cough", cat: "cold" },
+        { label: "Acidity & Gas", q: "antacid" },
+        { label: "Diabetes Care", cat: "diabetes" },
+        { label: "Heart Care", cat: "heart" },
+        { label: "Allergy & Sneezing", q: "cetirizine" },
+      ]},
     ]},
-    { title: "Quick relief", links: [
-      { label: "Fever & headache", q: "paracetamol" },
-      { label: "Allergy & sneezing", q: "cetirizine" },
-      { label: "Acidity & gas", q: "antacid" },
-      { label: "Antibiotics · Rx", q: "azithromycin" },
+    { tint: true, sections: [
+      { title: "Shop by Type", links: [
+        { label: "Tablets", cat: "pain" },
+        { label: "Syrups", cat: "cold" },
+        { label: "Antibiotics · Rx", q: "azithromycin" },
+        { label: "Pain Balms", q: "balm" },
+        { label: "ORS & Hydration", q: "ors" },
+        { label: "Antacids", q: "antacid" },
+      ]},
+    ]},
+    { sections: [
+      { title: "Diabetes", links: [ { label: "Test Strips", q: "glucose" } ] },
+      { title: "Heart Care", cat: "heart" },
+      { title: "First Aid", cat: "firstaid" },
+      { title: "Devices", q: "thermometer" },
     ]},
   ]},
   { id: "womencare", name: "Women Care", icon: "heart", cols: [
-    { title: "Everyday wellness", links: [
-      { label: "All women care", cat: "women" },
-      { label: "Iron & blood health", q: "iron" },
-      { label: "Calcium & bones", q: "calcium" },
+    { sections: [
+      { title: "Health Concerns", links: [
+        { label: "Period Care", q: "sanitary" },
+        { label: "Pregnancy & Mom", q: "folic" },
+        { label: "Anaemia & Iron", q: "iron" },
+        { label: "Bone & Joint", q: "calcium" },
+        { label: "PCOS Care", cat: "women" },
+        { label: "Menopause", cat: "women" },
+        { label: "Hair, Skin & Nails", cat: "skin" },
+      ]},
     ]},
-    { title: "Personal hygiene", links: [
-      { label: "Sanitary pads", q: "sanitary" },
-      { label: "Mom & pregnancy", q: "folic" },
+    { tint: true, sections: [
+      { title: "Daily Essentials", links: [
+        { label: "Sanitary Pads", q: "sanitary" },
+        { label: "Iron + Folic Acid", q: "iron" },
+        { label: "Calcium + D3", q: "calcium" },
+        { label: "Prenatal Vitamins", q: "folic" },
+        { label: "Multivitamins", q: "multivitamin" },
+        { label: "Skin & Hair Care", cat: "skin" },
+      ]},
+    ]},
+    { sections: [
+      { title: "Supplements", links: [ { label: "Iron & Blood", q: "iron" } ] },
+      { title: "Mother Care", q: "folic" },
+      { title: "Intimate Hygiene", cat: "women" },
+      { title: "Sanitary Care", q: "sanitary" },
     ]},
   ]},
   { id: "babycare", name: "Baby Care", icon: "baby", cols: [
-    { title: "Daily essentials", links: [
-      { label: "All baby & mom", cat: "baby" },
-      { label: "Diapers", q: "diaper" },
-      { label: "Baby bath & wash", q: "wash" },
+    { sections: [
+      { title: "Baby Health", links: [
+        { label: "Colic & Gripe", cat: "baby" },
+        { label: "Diaper Rash", q: "diaper" },
+        { label: "Cough & Cold", cat: "cold" },
+        { label: "Immunity", q: "multivitamin" },
+        { label: "Teething Care", cat: "baby" },
+        { label: "Fever & Pain", cat: "pain" },
+      ]},
+    ]},
+    { tint: true, sections: [
+      { title: "Daily Care", links: [
+        { label: "Diapers", q: "diaper" },
+        { label: "Baby Bath & Wash", q: "wash" },
+        { label: "Baby Lotion", cat: "skin" },
+        { label: "Baby Wipes", cat: "baby" },
+        { label: "Baby Powder", cat: "baby" },
+        { label: "Baby Food", cat: "baby" },
+      ]},
+    ]},
+    { sections: [
+      { title: "Feeding", links: [ { label: "Bottles & Sippers", cat: "baby" } ] },
+      { title: "Diapering", q: "diaper" },
+      { title: "Bath & Skin", q: "wash" },
+      { title: "Mom Care", q: "folic" },
     ]},
   ]},
   { id: "personalcare", name: "Personal Care", icon: "spark", cols: [
-    { title: "Skin & body", links: [
-      { label: "Skin Care", cat: "skin" },
-      { label: "Sun protection", q: "spf" },
-      { label: "Antiseptic care", q: "antiseptic" },
+    { sections: [
+      { title: "Skin Concerns", links: [
+        { label: "Acne & Pimples", cat: "skin" },
+        { label: "Sun Protection", q: "spf" },
+        { label: "Dryness & Moisture", cat: "skin" },
+        { label: "Anti-ageing", cat: "skin" },
+        { label: "Wounds & Cuts", q: "antiseptic" },
+      ]},
     ]},
-    { title: "Hygiene & protection", links: [
-      { label: "Hand sanitizer", q: "sanitizer" },
-      { label: "Face masks", q: "mask" },
+    { tint: true, sections: [
+      { title: "Skin & Body", links: [
+        { label: "Moisturisers", cat: "skin" },
+        { label: "Sunscreen", q: "spf" },
+        { label: "Antiseptic Care", q: "antiseptic" },
+        { label: "Hand Sanitizer", q: "sanitizer" },
+        { label: "Face Masks", q: "mask" },
+        { label: "Lip & Hand Care", cat: "skin" },
+      ]},
+    ]},
+    { sections: [
+      { title: "Hygiene", links: [ { label: "Hand Sanitizer", q: "sanitizer" } ] },
+      { title: "Protection", q: "mask" },
+      { title: "Skin Care", cat: "skin" },
+      { title: "Personal Care", cat: "wellness" },
     ]},
   ]},
   { id: "ayurveda", name: "Ayurveda", icon: "leaf", cols: [
-    { title: "Herbal & immunity", links: [
-      { label: "All ayurvedic range", cat: "ayurveda" },
-      { label: "Ashwagandha", q: "ashwagandha" },
-      { label: "Chyawanprash", q: "chyawanprash" },
-      { label: "Tulsi & herbal drops", q: "tulsi" },
+    { sections: [
+      { title: "Health Concerns", links: [
+        { label: "Cold & Cough", cat: "cold" },
+        { label: "Diabetic Care", cat: "diabetes" },
+        { label: "Abdomen Care", cat: "digest" },
+        { label: "Liver Care", cat: "ayurveda" },
+        { label: "Sexual Health Care", cat: "ayurveda" },
+        { label: "Immunity Boosters", q: "chyawanprash" },
+        { label: "Skin Hair & Nails Care", cat: "skin" },
+      ]},
+    ]},
+    { tint: true, sections: [
+      { title: "Herbs", links: [
+        { label: "Amla", cat: "ayurveda" },
+        { label: "Tulsi", q: "tulsi" },
+        { label: "Aloe Vera", cat: "ayurveda" },
+        { label: "Ashwagandha", q: "ashwagandha" },
+        { label: "Giloy", cat: "ayurveda" },
+        { label: "Triphala", cat: "ayurveda" },
+        { label: "Shilajit", cat: "ayurveda" },
+        { label: "Neem", cat: "ayurveda" },
+      ]},
+    ]},
+    { sections: [
+      { title: "Herbs", links: [ { label: "Haldi", cat: "ayurveda" } ] },
+      { title: "Herbal Juices", cat: "ayurveda" },
+      { title: "Chyawanprash", q: "chyawanprash" },
+      { title: "Honey", cat: "ayurveda" },
     ]},
   ]},
   { id: "vitamins", name: "Vitamins & Wellness", icon: "drop", cols: [
-    { title: "Supplements", links: [
-      { label: "Vitamins", cat: "vitamins" },
-      { label: "Multivitamins", q: "multivitamin" },
-      { label: "Vitamin C & immunity", q: "vitamin c" },
+    { sections: [
+      { title: "Shop by Need", links: [
+        { label: "Immunity", q: "vitamin c" },
+        { label: "Energy & Stamina", q: "multivitamin" },
+        { label: "Bone Health", q: "calcium" },
+        { label: "Skin, Hair & Nails", cat: "skin" },
+        { label: "Heart Health", cat: "heart" },
+      ]},
     ]},
-    { title: "Devices & first aid", links: [
-      { label: "First Aid", cat: "firstaid" },
-      { label: "Thermometers", q: "thermometer" },
-      { label: "Daily personal care", cat: "wellness" },
+    { tint: true, sections: [
+      { title: "Supplements", links: [
+        { label: "Vitamin C", q: "vitamin c" },
+        { label: "Multivitamins", q: "multivitamin" },
+        { label: "Vitamin D3", q: "vitamin d3" },
+        { label: "Calcium", q: "calcium" },
+        { label: "Iron & Folic", q: "iron" },
+        { label: "All Vitamins", cat: "vitamins" },
+      ]},
+    ]},
+    { sections: [
+      { title: "Devices", links: [ { label: "Thermometer", q: "thermometer" } ] },
+      { title: "First Aid", cat: "firstaid" },
+      { title: "Personal Care", cat: "wellness" },
+      { title: "Health Checks", q: "glucose" },
     ]},
   ]},
 ];

@@ -1,6 +1,6 @@
 // screens-shop.jsx — Home, Search, Product Detail
 
-const { useState: useStateS, useMemo } = React;
+const { useState: useStateS, useMemo, useEffect: useEffectS } = React;
 
 // ===================== HOME =====================
 function HomeScreen({ nav, cart, addItem, incItem, decItem, qtyOf, stockOf, onSearchFocus }) {
@@ -105,6 +105,10 @@ function SearchScreen({ nav, query, setQuery, initialCat, addItem, incItem, decI
   const [cat, setCat] = useStateS(initialCat || 'all');
   const [sort, setSort] = useStateS('popular');
   const [rxOnly, setRxOnly] = useStateS(false);
+
+  // sync the active-category chip when navigation supplies a new category
+  // (the router keeps SearchScreen mounted, so the initializer alone is stale)
+  useEffectS(() => { setCat(initialCat || 'all'); }, [initialCat]);
 
   const results = useMemo(() => {
     let list = window.PRODUCTS.filter(p => {

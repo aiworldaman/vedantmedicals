@@ -501,16 +501,21 @@ html[data-theme="dark"] .offer code{background:color-mix(in oklab,#000 24%, tran
 .dep-ic{display:grid;place-items:center;color:var(--brand-ink)}
 
 .catbar-scrim{position:absolute;top:100%;left:0;right:0;height:100vh;z-index:1;background:color-mix(in oklab,var(--ink) 22%,transparent);animation:fade .18s}
-.catpanel{position:absolute;top:100%;left:0;right:0;z-index:5;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);animation:catdrop .22s cubic-bezier(.2,.7,.2,1)}
-@keyframes catdrop{from{transform:translateY(-8px)}to{transform:translateY(0)}}
-.catpanel-inner{max-width:1240px;margin:0 auto;display:flex;gap:48px;padding:26px 22px 28px;flex-wrap:wrap}
-.catcol{min-width:148px}
-.catcol h4{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-3);margin:0 0 10px;font-family:var(--font);font-weight:700}
-.catlink{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:none;border:0;padding:8px 0;font-size:14px;font-weight:500;color:var(--ink-2);font-family:var(--font)}
+.catpanel{position:absolute;top:100%;left:0;right:0;z-index:5;pointer-events:none;animation:catdrop .22s cubic-bezier(.2,.7,.2,1)}
+@keyframes catdrop{from{opacity:.5;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.catpanel-inner{pointer-events:auto;width:fit-content;max-width:calc(100% - 32px);margin:0 auto;display:flex;align-items:stretch;padding:0;flex-wrap:nowrap;
+  background:var(--surface);border:1px solid var(--line);border-top:0;border-radius:0 0 16px 16px;box-shadow:var(--shadow-lg);overflow:hidden}
+.catcol{padding:28px 40px 34px;min-width:150px}
+.catcol.tint{background:var(--brand-tint)}
+.catsec{margin-bottom:22px}
+.catsec:last-child{margin-bottom:0}
+.catsec h4,.catsec-head{display:block;text-align:left;background:none;border:0;padding:0;margin:0 0 9px;font-family:var(--font);font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--ink);text-transform:none}
+.catsec-head{cursor:pointer}
+.catsec-head:hover{color:var(--brand-ink)}
+.catlink{display:block;width:100%;text-align:left;background:none;border:0;padding:7px 0;font-size:14px;font-weight:500;color:var(--ink-2);font-family:var(--font)}
 .catlink:hover{color:var(--brand-ink)}
-.catlink-dot{width:5px;height:5px;border-radius:50%;background:var(--line);flex:none;transition:background .15s}
-.catlink:hover .catlink-dot{background:var(--brand)}
-.cat-promo{margin-left:auto;min-width:200px}
+.cat-promo{padding:28px 32px;display:flex;align-items:center}
+.cat-promo .catpromo-card{flex:1}
 .catpromo-card{display:flex;flex-direction:column;gap:3px;background:var(--brand-tint);border:1px solid color-mix(in oklab,var(--brand) 18%,var(--line));border-radius:var(--r);padding:18px}
 .catpromo-ic{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:var(--brand-soft);color:var(--brand-ink);margin-bottom:6px}
 .catpromo-card b{font-family:var(--font-h);font-size:16px;font-weight:600;color:var(--ink)}
@@ -742,7 +747,9 @@ html[data-theme="dark"] .stock-badge.out{background:color-mix(in oklab,var(--off
   .botnav{display:flex}
   .catbar-lead{display:none}
   .cat-promo{display:none}
-  .catpanel-inner{gap:26px;padding:22px}
+  .catpanel-inner{flex-direction:column;padding:6px 0;width:auto;max-width:none;margin:0 12px;border-radius:0 0 14px 14px}
+  .catcol{padding:14px 22px}
+  .catcol.tint{background:var(--brand-tint)}
   .appfooter{margin-bottom:8px}
   .af-grid{grid-template-columns:1fr 1fr}
   .toast{bottom:96px}
